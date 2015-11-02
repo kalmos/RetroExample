@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['retro2dapi',['Retro2DApi',['../group__Engine2DType.html#gaa97e514cf68a9f2e56804d2eece1b2df',1,'Retro2DApi.h']]],
+  ['retrobool',['RetroBool',['../group__RetroType.html#gaecca814d44ef00099b70a94be369c864',1,'RetroType.h']]],
+  ['retrochar',['RetroChar',['../group__RetroType.html#gaa868108ab81d2356f9d4c55a6e50b15b',1,'RetroType.h']]],
+  ['retrodouble',['RetroDouble',['../group__RetroType.html#ga02fe50f873ed468247a3564bf7af5a96',1,'RetroType.h']]],
+  ['retrofloat',['RetroFloat',['../group__RetroType.html#gac714990bdd278bce304db280979828fd',1,'RetroType.h']]],
+  ['retrofont',['RetroFont',['../group__Engine2DType.html#ga8b3d3d13c2c9224d447142f840e73e91',1,'EngineType.h']]],
+  ['retrofontlist',['RetroFontList',['../group__Engine2DType.html#ga9741b7a37cdaf3ec2a2b3b28bc761264',1,'Retro2DApi.h']]],
+  ['retroid',['RetroId',['../group__Engine2DType.html#gac2851b7da045132b3835ecd855cfbf53',1,'EngineType.h']]],
+  ['retroint',['RetroInt',['../group__RetroType.html#ga00931106b417f2d7bc4032c958846990',1,'RetroType.h']]],
+  ['retroint16',['RetroInt16',['../group__RetroType.html#ga752fde923118fa7900cad904516e8629',1,'RetroType.h']]],
+  ['retroint32',['RetroInt32',['../group__RetroType.html#gaf3e42e7789c528d993822b45d7f78da8',1,'RetroType.h']]],
+  ['retroint64',['RetroInt64',['../group__RetroType.html#gadaca03e1d680364bba5dde39bc1d2628',1,'RetroType.h']]],
+  ['retroint8',['RetroInt8',['../group__RetroType.html#ga3cc15d3d50b1dc160c49a91cc5e33ce1',1,'RetroType.h']]],
+  ['retrointid',['RetroIntId',['../group__Engine2DType.html#ga144b81d6f4ac914e10c42017ec41c4b1',1,'EngineType.h']]],
+  ['retroptr',['RetroPtr',['../group__RetroType.html#gacc7c9e6fdc0ba760c3e07c6c9f992123',1,'RetroType.h']]],
+  ['retrosystem',['RetroSystem',['../group__RetroSystemType.html#gac90cbe1af184e931b418a33c86b60388',1,'RetroSystem.h']]],
+  ['retrouchar',['RetroUChar',['../group__RetroType.html#ga441d16f060bc1bf13434cdf77f76443a',1,'RetroType.h']]],
+  ['retrouint',['RetroUInt',['../group__RetroType.html#gaa8c1f3cd25d0b329aaf3dbac436a8ebe',1,'RetroType.h']]],
+  ['retrouint16',['RetroUInt16',['../group__RetroType.html#ga8bf063299336a9c1f21d95910898eb4f',1,'RetroType.h']]],
+  ['retrouint32',['RetroUInt32',['../group__RetroType.html#ga3558def02f1f956ea2d480793fe9d7a2',1,'RetroType.h']]],
+  ['retrouint64',['RetroUInt64',['../group__RetroType.html#ga9f77dc5308f08e449727685a20232e3d',1,'RetroType.h']]],
+  ['retrouint8',['RetroUInt8',['../group__RetroType.html#ga3f93fb723571531bd88f8167e161ef9c',1,'RetroType.h']]],
+  ['retroutf_5f8',['RetroUtf_8',['../group__Engine2DType.html#gaed7e2735beca1a179af4ab27d223e90f',1,'EngineType.h']]]
+];
