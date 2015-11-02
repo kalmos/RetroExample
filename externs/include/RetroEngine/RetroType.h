@@ -22,7 +22,7 @@
 extern "C" {
 #endif
 
-#	if defined(Windows) || defined(Mac)
+#	if defined(Windows) || defined(Darwin)
 #		include	<stdint.h>
 #		include	<stddef.h>
 #	endif
@@ -284,25 +284,23 @@ extern "C" {
 		 * will define it.
 		 */
 		typedef signed long long			RetroInt64;
-	
 #		if defined(Windows)
-#			if defined(X64)
+#			if defined(ARCHx86_64)
 #				pragma message("warning: Retroint64 type doesnt truly exist, use it at your own risk")
-#			elif defined(X32)
+#			elif defined(ARCHx86)
 #				pragma message("warning: you are on 32bit system, do not use Retroint64t")
 #			else
 #				pragma message("warning: can not see what system it was, use Retroint64t at your own risk")
 #			endif
 #		else
-#			if defined(X64)
+#			if defined(ARCHx86_64)
 #				warning Retroint64 type doesnt truly exist, use it at your own risk
-#			elif defined(X32)
+#			elif defined(ARCHx86)
 #				warning you are on 32bit system, do not use Retroint64t
 #			else
 #				warning can not see what system it was, use Retroint64t at your own risk
 #			endif
 #		endif
-	
 #	endif
 	/** @} */
 #ifdef		__cplusplus

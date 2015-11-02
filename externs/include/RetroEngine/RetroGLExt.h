@@ -19,7 +19,7 @@ extern "C" {
 #	define RetroGlGetProcAddress wglGetProcAddress
 #	define GLAPIENTRY __stdcall
 #	define CASTBWLEW const char*
-#elif defined(Mac)
+#elif defined(Darwin)
 #	include <OpenGL/gl.h>
 #	define RetroGlGetProcAddress aglGetProcAddress
 #	define CASTBWLEW const unsigned char*

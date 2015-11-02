@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-#	if defined(Linux) || defined(Windows) || defined (Mac)
+#	if defined(Linux) || defined(Windows) || defined (Darwin)
 
 #		if defined(Windows)
 #			include    <windows.h>
@@ -24,7 +24,7 @@ extern "C" {
 
 #		if defined(Linux) || defined(Windows)
 #			include	<GL/gl.h>
-#		elif defined(Mac)
+#		elif defined(Darwin)
 #			include	<OpenGL/gl.h>
 #		endif
 
@@ -35,7 +35,7 @@ extern "C" {
 #		define		GLFLUSH		        glFlush();
 #		define		GLTEXTURES          glGenTextures(1, &texture);
 
-#		if defined(Linux) || defined(Mac)
+#		if defined(Linux) || defined(Darwin)
 #			define     GLTEXIMAGERGB5_A1	glTexImage2D (GL_TEXTURE_2D, 0, GL_RGB5_A1, width, height, 0,\
                                             GL_BGRA, GL_UNSIGNED_SHORT_1_5_5_5_REV, tex);
 #			define     GLTEXIMAGERGBA4		glTexImage2D (GL_TEXTURE_2D, 0, GL_RGBA4, width, height, 0, GL_RGBA,\

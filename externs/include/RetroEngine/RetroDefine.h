@@ -205,7 +205,7 @@ extern "C" {
 	 */
 #	define RETRO_ABS(x) (x < 0) ? -x : x
 	
-#	ifdef Mac
+#	ifdef Darwin
 		/**
 		 * A portable way of marking a function as deprecated
 		 */

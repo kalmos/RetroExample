@@ -44,7 +44,7 @@ extern "C" {
 	 * @{
 	 */
 	
-	#if defined(Linux) || defined(Windows) || defined (Mac)
+	#if defined(Linux) || defined(Windows) || defined (Darwin)
 	
 	/**
 	 * @brief Enum for recognizing type of texture.
@@ -208,7 +208,7 @@ extern "C" {
 		#pragma pack(pop)
 
 	#endif
-	#if defined(Linux) || defined (Mac)
+	#if defined(Linux) || defined (Darwin)
 
 		/**
 		 * @brief The BMP header part 1.
