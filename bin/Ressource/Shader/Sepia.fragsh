@@ -1,0 +1,10 @@
+uniform sampler2D tex;
+void main(void)
+{
+	vec4 baseCol = texture2D(tex,gl_TexCoord[0].st);
+	
+	gl_FragColor = vec4((baseCol.r * 0.393) + (baseCol.g * 0.769) + (baseCol.b * 0.189),
+						(baseCol.r * 0.349) + (baseCol.g * 0.686) + (baseCol.b * 0.168),
+						(baseCol.r * 0.272) + (baseCol.g * 0.534) + (baseCol.b * 0.131),
+						baseCol.a);
+}

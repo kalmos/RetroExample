@@ -1,0 +1,9 @@
+uniform sampler2D tex;
+void main(void)
+{
+vec2 st = gl_TexCoord[0].st;
+st = vec2(st.s * 640.0, st.t * 480.0);
+st = vec2(mod(st.s, 320.0), mod(st.t, 240.0));
+st = vec2(st.s / 320.0, st.t / 240.0);
+gl_FragColor = texture2D(tex,st);
+}

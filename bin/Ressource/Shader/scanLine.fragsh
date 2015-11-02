@@ -1,0 +1,15 @@
+uniform sampler2D rubyTexture;
+
+void main(void)
+{
+	vec4 rgb = texture2D(rubyTexture, gl_TexCoord[0].xy);
+	vec4 intens;
+	float level;
+	
+	if (fract(gl_FragCoord.y * 0.25) > 0.5)
+		intens = rgb * vec4(0);
+	else
+		intens = smoothstep(0.2,0.8,rgb) + normalize(vec4(rgb.xyz, 1.0));
+	level = float(4.0-gl_TexCoord[0].z) * 0.19;
+	gl_FragColor = intens * (0.5-level) + rgb * 1.1 ;
+}

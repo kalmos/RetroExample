@@ -1,0 +1,22 @@
+uniform sampler2D tex;
+uniform vec2 screen;
+uniform vec2 dim;
+
+void main(void)
+{
+	vec2 st = gl_TexCoord[0].st;
+	//vec2 tmp = vec2(1.5, 1.5);
+	
+	st = vec2(st.s * screen.s, st.t * screen.t);
+	st.s -= mod(st.s, dim.s);
+	st.t -= mod(st.t, dim.t);
+	st = vec2(st.s / screen.s, st.t / screen.t);
+	gl_FragColor = texture2D(tex,st);
+	
+	//tmp.s = tmp.s + screen.s;
+	
+	//if (tmp.s == 641.5)
+	//	gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
+	
+	
+}
