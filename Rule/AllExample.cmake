@@ -22,8 +22,15 @@ IF (CPP_COMPILER MATCHES "MSVC")
 ELSE (CPP_COMPILER MATCHES "MSVC")
 	IF (CPP_COMPILER MATCHES "CLANG")
 
-SET(ALL_LIB "-lSDL -lSDLmain -lRetroEngineList -lRetroEngine2D -lPortableThread -lRetroEnginephysique -framework OpenGL -framework Cocoa -framework AudioUnit -framework Carbon -framework IOKit")
+		IF (USE_SDL_FRAMEWORKS)
 
+			SET(ALL_LIB "-lRetroEngineList -lRetroEngine2D -lPortableThread -lRetroEnginephysique -framework OpenGL -framework Cocoa -framework AudioUnit -framework Carbon -framework IOKit -F\"${CMAKE_SOURCE_DIR}/externs/frameworks\" -framework SDL")
+
+		ELSE (USE_SDL_FRAMEWORKS)
+
+			SET(ALL_LIB "-lSDL -lSDLmain -lRetroEngineList -lRetroEngine2D -lPortableThread -lRetroEnginephysique -framework OpenGL -framework Cocoa -framework AudioUnit -framework Carbon -framework IOKit")
+
+		ENDIF (USE_SDL_FRAMEWORKS)
 ELSE (CPP_COMPILER MATCHES "CLANG")
 
 		set(ALL_LIB ${OPENGL_LIBRARIES} -lSDL -lSDLmain -L"${CUSTOM_LIB_FOLDER}" -lRetroEngineList -lRetroEngine2D -lPortableThread -lRetroEnginephysique -lpthread)
@@ -31,6 +38,15 @@ ELSE (CPP_COMPILER MATCHES "CLANG")
 	ENDIF(CPP_COMPILER MATCHES "CLANG")
 ENDIF(CPP_COMPILER MATCHES "MSVC")
 
-add_executable(allExample ${EXAMPLE_SRC} ${EXAMPLE_HEAD} ${CMAKE_SOURCE_DIR}/Rule/AllExample.cmake ../Rule/CMakeLists.txt)
+IF (USE_SDL_FRAMEWORKS)
+
+add_executable(allExample ${EXAMPLE_FOLDER}/SDLMain.m ${EXAMPLE_FOLDER}/SDLMain.h ${EXAMPLE_SRC} ${EXAMPLE_HEAD} ${CMAKE_SOURCE_DIR}/Rule/AllExample.cmake ../Rule/CMakeLists.txt)
+
+ELSE (USE_SDL_FRAMEWORKS)
+
+	add_executable(allExample ${EXAMPLE_SRC} ${EXAMPLE_HEAD} ${CMAKE_SOURCE_DIR}/Rule/AllExample.cmake ../Rule/CMakeLists.txt)
+
+ENDIF (USE_SDL_FRAMEWORKS)
+
 target_link_libraries(allExample ${ALL_LIB})
 set_target_properties(allExample PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -DCUSTOM_MAIN_FUNC")

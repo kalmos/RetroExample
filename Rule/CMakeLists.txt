@@ -38,12 +38,29 @@ endif (EXISTS "${CUSTOM_LIB_FOLDER}")
 
 link_directories("${CUSTOM_LIB_FOLDER}")
 
-message ("You need to put RetroEngine and SLD lib in")
-message ("${CUSTOM_LIB_FOLDER}")
-message ("No check are done except the one made by the compiler\n")
-message ("You need to put RetroEngine and SLD header in")
-message ("${CMAKE_SOURCE_DIR}/externs/include/")
-message ("No check are done except the one made by the compiler\n")
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/externs/Frameworks/SDL.framework")
+
+	if (NOT DEFINED USE_SDL_FRAMEWORKS)
+		set (USE_SDL_FRAMEWORKS true CACHE BOOL "if SDL.Framework is present" FORCE)
+		include_directories("${CMAKE_CURRENT_SOURCE_DIR}/externs/Frameworks/SDL.framework/")
+	endif(NOT DEFINED USE_SDL_FRAMEWORKS)
+	message ("You need to put RetroEngine lib in")
+	message ("${CUSTOM_LIB_FOLDER}")
+	message ("No check are done except the one made by the compiler\n")
+	message ("You need to put RetroEngine header in")
+	message ("${CMAKE_SOURCE_DIR}/externs/include/")
+	message ("No check are done except the one made by the compiler\n")
+
+else (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/externs/Frameworks/SDL.framework")
+
+	message ("You need to put RetroEngine and SLD lib in")
+	message ("${CUSTOM_LIB_FOLDER}")
+	message ("No check are done except the one made by the compiler\n")
+	message ("You need to put RetroEngine and SLD header in")
+	message ("${CMAKE_SOURCE_DIR}/externs/include/")
+	message ("No check are done except the one made by the compiler\n")
+
+endif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/externs/Frameworks/SDL.framework")
 
 #----------------------------------------
 #-- INPUT/OUTPUT PATHS
